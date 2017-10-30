@@ -36,7 +36,7 @@ ADD deploy-and-run.sh /opt/apache-tomcat-${TOMCAT_VERSION}/bin/
 RUN chmod 755 /opt/apache-tomcat-${TOMCAT_VERSION}/bin/deploy-and-run.sh \
  && rm -rf /opt/tomcat/webapps/examples /opt/tomcat/webapps/docs 
 
-VOLUME [ "/opt/tomcat/logs", "/opt/tomcat/work", "/opt/tomcat/temp", "/tmp/hsperfdata_root" ]
+VOLUME [ "/opt/tomcat/webapps", "/opt/tomcat/logs", "/opt/tomcat/work", "/opt/tomcat/temp", "/tmp/hsperfdata_root" ]
 
 # Add debug-options and java-container-options to /opt and make it executable
 COPY debug-options java-container-options /opt/
